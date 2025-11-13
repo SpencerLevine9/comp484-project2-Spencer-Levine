@@ -18,25 +18,36 @@
     </header>
 
     <main>
-      <section class="pet-image-container">
-         <!-- Replace pet image with your own pet image -->
-        <img class="pet-image" src="https://cdn.glitch.com/3aa98e05-3216-497c-a251-210ae4713a83%2Fhound.jpg?1541715339220">
-      </section>
-      <section class="dashboard">
-        <div>Name: <strong><span class="name"></span></strong></div>
-        <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
-        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
-        <div class="button-container">
-          <button class="treat-button">
-            Treat
-          </button>
-          <button class="play-button">
-            Play
-          </button>
-          <button class="exercise-button">
-            Exercise
-          </button>
-        </div>
+      <div class="giga-wrapper">  <!-- 7.) Wraps pet image and dashboard together for styling -->
+        <section class="pet-image-container">
+          <!-- Replace pet image with your own pet image -->
+          <img class="pet-image" src="images/Project_2_Dog.png">
+        </section>
+        <section class="dashboard">
+          <div>Name: <strong><span class="name"></span></strong></div>
+          <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
+          <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+          <div>Energy: <strong><span class="energy"></span></strong></div> <!-- 5.) Add a new behavior that correlates with the new button you added. 
+                                                                                    You can add it below the happiness text in the html -->
+          <div id="pet-msg" aria-live="polite"></div>   <!-- 6.) adds a message area to step 6 -->
+
+          <div class="button-container">
+            <button class="treat-button">
+              Treat
+            </button>
+            <button class="play-button">
+              Play
+            </button>
+            <button class="exercise-button">
+              Exercise
+            </button>
+            <button class="sleep-button">   <!-- 4.) added the Sleep button -->
+              Sleep
+            </button>
+          </div>
+
+        <!-- Sound effect for your pet extra feature -->
+          <audio id="pet-sound" src="sound/dog_bark.mp3" preload="auto"></audio>
       </section>
     </main>
 

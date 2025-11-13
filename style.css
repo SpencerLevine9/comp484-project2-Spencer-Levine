@@ -6,21 +6,29 @@
   body {
     font-family: helvetica, arial, sans-serif;
     margin: 25px;
+    background-color: #404a58; 
   }
   
   main {
     display:block;
     height:175px;
+    max-width: 900px;
+    margin: 0 auto;
   }
   
   header {
     border-bottom: 1px solid black;
   }
   
+  /* Enhance the page title */
   h1 {
-    font-weight: bold;
-    color: #000;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #f2f4f8;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
   }
+
   
   .bold {
     font-weight: bold;
@@ -51,6 +59,7 @@
   
   .dashboard div {
     display:block;
+    margin-bottom: 3px;
   }
   
   .pet-image-container {
@@ -59,8 +68,18 @@
   }
   
   .dashboard {
-    float:left;
-    padding:20px;
+    padding: 12px 20px;
+    vertical-align: top;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-left: 20px;
+    text-align: left;
+    height: 250px;     /* matches image height visually */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
   }
   
   .button-container {
@@ -69,14 +88,66 @@
   
   .button-container button {
     width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      display: inline-block;
-      float: left;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    float: left;
     font-size:15px;
     background-color: #1e2835;
     border-color: #404853;
     cursor:pointer;
     background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
     color: #fafafa;
+  }
+
+  /* I added this additional work */
+  #pet-msg {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 1px solid #d9e1f2;
+    border-radius: 10px;
+    background: #f4f7ff;
+    display: block;       /* take full line, keeps buttons from shifting */
+    min-height: 28px;     /* reserves space even when empty */
+    opacity: 0;           /* we’ll fade this in/out in JS */
+  }
+
+  .pet-image {
+    height: 250px;
+    position: relative;   /* enables left/right movement for .animate() */
+    border-radius: 8px;
+    border: 3px solid rgb(0, 0, 0);
+  }
+
+  /* Center image + dashboard as a group */
+  .pet-image-container {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    width: 280px;
+  }
+
+/* Add some breathing room of the pet image spacing */
+  .pet-image-container, .dashboard {
+    margin-top: 20px; 
+  }
+
+  /* Basic hover effect to buttons */
+  .button-container button:hover {
+    background-color: #2d3a4d;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  /* Soft shadow around pet image */
+  .pet-image {
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+  }
+
+    /* Wrap the pet and stats together nicely */
+  .giga-wrapper {
+    display: flex;
+    align-items: center;   /* vertical alignment */
+    gap: 30px;             /* space between image + stats */
+    margin-top: 30px;
   }
