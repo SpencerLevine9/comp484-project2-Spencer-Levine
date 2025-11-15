@@ -25,10 +25,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight = pet_info.weight + 1;       // increase weight by 1
       showPetMessage("Yum! Thanks for the treat!"); // 6.) the message for step 6
       animatePetImage(); // step 7.) method 1
-        // Play the bark sound extra feature
-      document.getElementById('pet-sound').currentTime = 0;
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
+      document.getElementById('pet-sound').currentTime = 0;   // Play the bark sound extra feature
       document.getElementById('pet-sound').play();
-
       checkAndUpdatePetInfoInHtml();
     }
     
@@ -37,8 +36,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight = pet_info.weight - 1;       // lose 1 pound from playing
       showPetMessage("That was fun! Let's play again!"); // 6.) the message for step 6
       animatePetImage(); // step 7.) method 1
-      // Play the bark sound extra feature
-      document.getElementById('pet-sound').currentTime = 0;
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
+      document.getElementById('pet-sound').currentTime = 0;    // Play the bark sound extra feature
       document.getElementById('pet-sound').play();
       checkAndUpdatePetInfoInHtml();
     }
@@ -48,8 +47,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight = pet_info.weight - 2;       // lose 2 pounds
       showPetMessage("Phew! That was a workout!"); // 6.) the message for step 6
       animatePetImage(); // step 7.) method 1
-      // Play the bark sound extra feature
-      document.getElementById('pet-sound').currentTime = 0;
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
+      document.getElementById('pet-sound').currentTime = 0;   // Play the bark sound extra feature
       document.getElementById('pet-sound').play();
       checkAndUpdatePetInfoInHtml();
     }
@@ -60,7 +59,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness = pet_info.happiness + 1;  // happy from rest
       pet_info.weight = pet_info.weight - 0.5; // small weight loss from rest
       showPetMessage("Zzz… I feel rested!"); // 6.) the message for step 6
-      animatePetImage(); // step 7.) method 1 
+      animatePetImage(); // step 7.) method 1
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
       checkAndUpdatePetInfoInHtml();
     }
 
