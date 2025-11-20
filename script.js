@@ -5,18 +5,19 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     // Called function to update the name, happiness, and weight of our pet in our HTML
     checkAndUpdatePetInfoInHtml();
   
-    // When each button is clicked, it will "call" function for that button (functions are below)
+    // When each button is clicked, it will call the function for that button the functions are below 
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
     $('.sleep-button').click(clickedSleepButton); // 4.) add a button: this links the new button to the function
-  })
+ })
   
   // 1.) Create a pet_info object with keys "name", "weight", "happiness" and set initial values. 
   //     Set this equal to variable "pet_info" 
   // 4.) add the energy attribute 
-    // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"Jet", weight: 12, happiness: 5, energy: 50};
+  // 5.) energy attribute 
+  // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
+    var pet_info = {name:"Jet", weight: 12, happiness: 5, energy: 50}; 
 
     // 2.) Add a behavior to button interaction. When your pet receives a treat, add to its happiness and weight. 
     //     When your pet exercises, reduce its happiness and weight. When your pet plays, add to its happiness and reduce its weight
@@ -24,10 +25,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness = pet_info.happiness + 1; // increase happiness by 1
       pet_info.weight = pet_info.weight + 1;       // increase weight by 1
       showPetMessage("Yum! Thanks for the treat!"); // 6.) the message for step 6
-      animatePetImage(); // step 7.) method 1
-      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
-      document.getElementById('pet-sound').currentTime = 0;   // Play the bark sound extra feature
-      document.getElementById('pet-sound').play();
+      animatePetImage(); // step 7.) method 1 on the button click
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
+      document.getElementById('pet-sound').currentTime = 0;  // Play the bark sound extra feature
+      document.getElementById('pet-sound').play();      
       checkAndUpdatePetInfoInHtml();
     }
     
@@ -35,8 +36,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness = pet_info.happiness + 2; // increase happiness by 2
       pet_info.weight = pet_info.weight - 1;       // lose 1 pound from playing
       showPetMessage("That was fun! Let's play again!"); // 6.) the message for step 6
-      animatePetImage(); // step 7.) method 1
-      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
+      animatePetImage(); // step 7.) method 1 on the button click
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       document.getElementById('pet-sound').currentTime = 0;    // Play the bark sound extra feature
       document.getElementById('pet-sound').play();
       checkAndUpdatePetInfoInHtml();
@@ -46,8 +47,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness = pet_info.happiness - 1; // lose happiness by 1
       pet_info.weight = pet_info.weight - 2;       // lose 2 pounds
       showPetMessage("Phew! That was a workout!"); // 6.) the message for step 6
-      animatePetImage(); // step 7.) method 1
-      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
+      animatePetImage(); // step 7.) method 1 on the button click
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       document.getElementById('pet-sound').currentTime = 0;   // Play the bark sound extra feature
       document.getElementById('pet-sound').play();
       checkAndUpdatePetInfoInHtml();
@@ -55,32 +56,32 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     // 4.) add a new action button this is the js for it 
     function clickedSleepButton() {
-      pet_info.energy = pet_info.energy + 20;  // restore energy
+      pet_info.energy = pet_info.energy + 20;  // 5.) restore energy
       pet_info.happiness = pet_info.happiness + 1;  // happy from rest
       pet_info.weight = pet_info.weight - 0.5; // small weight loss from rest
       showPetMessage("Zzz… I feel rested!"); // 6.) the message for step 6
-      animatePetImage(); // step 7.) method 1
-      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2
+      animatePetImage(); // step 7.) method 1 on the button click
+      $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       checkAndUpdatePetInfoInHtml();
     }
 
-    function checkAndUpdatePetInfoInHtml() {
+    function checkAndUpdatePetInfoInHtml() { 
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
     }
     
-    // 3.) Fix key bugs to make sure certain key values can't go below zero. (can use conditional). We used two if statements
+    // 3.) Fix key bugs to make sure certain key values can't go below zero. (can use conditional). I used two if statements
     function checkWeightAndHappinessBeforeUpdating() {
       // Add conditional so if weight is lower than zero.
-      if (pet_info.weight < 0) {
-        pet_info.weight = 0;
+      if (pet_info.weight < 0) {  // if weight is less than 0
+        pet_info.weight = 0;      // set weight to 0
       }
-      if (pet_info.happiness < 0) {
-        pet_info.happiness = 0;
+      if (pet_info.happiness < 0) {  // if happiness is less than 0
+        pet_info.happiness = 0;   // set happiness to 0
       }
     }
     
-    // Updates your HTML with the current values in your pet_info object
+    // Updates your HTML with the current values in your pet_info object from step 1
     function updatePetInfoInHtml() {
       $('.name').text(pet_info['name']);
       $('.weight').text(pet_info['weight']);
@@ -89,16 +90,17 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
     // 6.) added the helper function to step 6 which is: 
+    // This shows a message from your pet in the #pet-msg HTML element
     // Add a visual notification after each button press with a comment from your pet. 
-    // For this requirement you can not use console.log() or alert().
+    // For this requirement you can not use console.log() or alert()
     function showPetMessage(text) {
       $('#pet-msg')
         .stop(true, true)        // cancel any previous animation
         .text(text)              // set the message
         .css('opacity', 0)     // ensure we start fully transparent for step 6.) the message to show up
-        .fadeTo(200, 1)        // fade to visible for step 6.) the message to show up, this is also method 2 for step 7.)
+        .fadeTo(200, 1)        // fade back out message for step 6.) the message to show up
         .delay(900)              // keep it on screen briefly
-        .fadeTo(400, 0);       // fade back to transparent for step 6.) the message to show up this is also method 2 for step 7.)
+        .fadeTo(400, 0);       //  fade back out message for step 6.) the message to show up
     }
 
     // 7.) New jQuery method 1: .animate()
