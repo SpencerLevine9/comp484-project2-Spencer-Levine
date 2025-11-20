@@ -26,6 +26,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight = pet_info.weight + 1;       // increase weight by 1
       showPetMessage("Yum! Thanks for the treat!"); // 6.) the message for step 6
       animatePetImage(); // step 7.) method 1 on the button click
+
+     // SECOND METHOD .fadeToggle() 
       $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       document.getElementById('pet-sound').currentTime = 0;  // Play the bark sound extra feature
       document.getElementById('pet-sound').play();      
@@ -37,6 +39,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight = pet_info.weight - 1;       // lose 1 pound from playing
       showPetMessage("That was fun! Let's play again!"); // 6.) the message for step 6
       animatePetImage(); // step 7.) method 1 on the button click
+
+    // SECOND METHOD .fadeToggle() 
       $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       document.getElementById('pet-sound').currentTime = 0;    // Play the bark sound extra feature
       document.getElementById('pet-sound').play();
@@ -47,6 +51,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness = pet_info.happiness - 1; // lose happiness by 1
       pet_info.weight = pet_info.weight - 2;       // lose 2 pounds
       showPetMessage("Phew! That was a workout!"); // 6.) the message for step 6
+
+      // SECOND METHOD .fadeToggle() 
       animatePetImage(); // step 7.) method 1 on the button click
       $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       document.getElementById('pet-sound').currentTime = 0;   // Play the bark sound extra feature
@@ -60,6 +66,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness = pet_info.happiness + 1;  // happy from rest
       pet_info.weight = pet_info.weight - 0.5; // small weight loss from rest
       showPetMessage("Zzz… I feel rested!"); // 6.) the message for step 6
+
+      // SECOND METHOD .fadeToggle() 
       animatePetImage(); // step 7.) method 1 on the button click
       $(".pet-image").fadeToggle(150).fadeToggle(150);  // step 7.) method 2 adds a quick flash effect on the image when clicked
       checkAndUpdatePetInfoInHtml();
@@ -103,6 +111,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         .fadeTo(400, 0);       //  fade back out message for step 6.) the message to show up
     }
 
+    // FIRST METHOD .animate()
     // 7.) New jQuery method 1: .animate()
     // This moves the pet image slightly left and right to make it "wiggle" happily when clicked.
     function animatePetImage() {
